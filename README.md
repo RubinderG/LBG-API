@@ -139,3 +139,65 @@ Alternatively we could 'black-box' system test by using the front-end to create 
 *AND* an item with that id exists
 *AND* they press the delete item button
 *THEN* that item is deleted from the database
+
+# Documentation
+
+## Source Control
+
+### Workflow
+
+* git add --all
+* git commit -m ""
+* git push
+
+### Download a repo
+
+* git clone URL
+
+### Initialise a local repo
+
+* git init
+
+### set a remote repo / associate with a local repo
+
+* git remote add origin URL
+
+### push for the first time
+
+* git push -u RemoteName (origin) branchName
+
+### how to ignroe files
+*.gitignore
+
+### to copy a version of someone else repo to our account
+*fork
+
+### Branching
+
+*git branch branchName
+
+### delete a branch
+
+* git branch -d branchName
+
+### Swap to a branch
+
+*git checkout branchName
+
+### Swap and Create a branch
+
+* git checkout b branchName
+
+### Merging
+
+* merge INTO your current branch
+* git merge branchName
+
+### Undoing a change
+* git revert HEAD
+
+### Rolling
+* git reset --hard SHA1
+
+### how to find the SHA1 of a commit
+* git log --oneline
