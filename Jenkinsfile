@@ -3,12 +3,13 @@ pipeline {
 	stages{
 		stage('Build Image'){
 			steps{
-			sh 'docker build -t stratcastor/api:build-$BUILD_NUMBER .'
+			sh 'docker build -t gcr.io/lbg-210222/LBGAPIrubinder:latest -t gcr.io/lbg-210222/LBGAPIrubinders:build-$BUILD_NUMBER .'
 			}
 		}
-		stage('Push to Dockerhub'){
+		stage('Push GCR'){
 			steps{
-            sh 'docker push stratcastor/api:build-$BUILD_NUMBER'
+            sh 'docker push gcr.io/lbg-210222/LBGAPIrubinder:build-$BUILD_NUMBER'
+			sh 'docker push gcr.io/lbg-210222/LBGAPIrubinder:latest'
 			}
 		}
 		stage('Reapply '){
@@ -20,7 +21,8 @@ pipeline {
 		}
         stage('Cleanup'){
 			steps{
-            sh 'docker system prune'
+            sh 'docker rmi gcr.io/lbg-210222/LBGAPIrubinder:latest'
+			sh 'docker rmi gcr.io/lbg-210222/LBGAPIrubinder:build-$BUILD_NUMBER'
 			}
 		}
     }
