@@ -34,6 +34,6 @@ spec:
     spec:
       containers:
       - name: api
-        image: LBGAPIrubinder/api:latest
+        image: lbgapi-rubinder/api:latest
         ports:
         - containerPort: 4000
